@@ -1,0 +1,31 @@
+# flood.dag - Workflow definition
+
+# Define Jobs using the generic submit file
+JOB A  flood.sub
+JOB B  flood.sub
+JOB C  flood.sub
+JOB D  flood.sub
+JOB E1 flood.sub
+JOB E2 flood.sub
+JOB F  flood.sub
+JOB G  flood.sub
+JOB H  flood.sub
+
+# Define Variables: Pass the specific script name to each job
+VARS A  job_name="A_Ingest"      script_name="task_a_ingestion.py"
+VARS B  job_name="B_Preprocess"  script_name="task_b_preprocessing.py"
+VARS C  job_name="C_Features"    script_name="task_c_feature_engineering.py"
+VARS D  job_name="D_Split"       script_name="task_d_split.py"
+VARS E1 job_name="E1_RainModel"  script_name="task_e1_rainfall.py"
+VARS E2 job_name="E2_WaterModel" script_name="task_e2_water.py"
+VARS F  job_name="F_Merge"       script_name="task_f_merge.py"
+VARS G  job_name="G_Validation"  script_name="task_g_validation.py"
+VARS H  job_name="H_Visualize"   script_name="task_h_visualize.py"
+
+# Define Dependencies (The Workflow Graph)
+PARENT A CHILD B
+PARENT B CHILD C
+PARENT C CHILD D
+PARENT D CHILD E1 E2
+PARENT E1 E2 CHILD F
+PARENT F CHILD G H
