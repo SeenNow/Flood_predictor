@@ -1,0 +1,18 @@
+# flood.sub - Generic submit file
+# Executable is python3, arguments is the script name passed from DAG
+executable          = /usr/bin/python3
+arguments           = $(script_name)
+
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+transfer_input_files = config.py
+
+request_cpus        = 1
+request_memory      = 512MB
+request_disk        = 512MB
+
+log                 = logs/$(job_name).log
+output              = logs/$(job_name).out
+error               = logs/$(job_name).err
+
+queue
