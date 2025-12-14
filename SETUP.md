@@ -10,15 +10,25 @@ This document explains how to set up the Flood Predictor project for a shared NF
 
 ## 1. Clone the repository
 
-On the submission host that will submit the DAG:
+On the submission host in the mount that will submit the DAG:
 
 ```bash
 git clone https://github.com/SeenNow/Flood_predictor.git
 cd Flood_predictor
 ```
+This should put all files on the from github on your system
 
+## 2. Make sure the .py ,.sub, and .dag files are executable
+if you are in Flood_predictor directory
+```bash
+chmod +x *
+```
+Or if in mnt/data directory use
+```bash
+chmod -R +x Flood_predictor
+```
 
-## 2. Set up Python environment
+## 3. Set up Python environment
 
 On a node that can access `/mnt/data/Flood_predictor`:
 
@@ -27,7 +37,7 @@ First, ensure `venv` is installed (it's usually included with Python 3.3+, but m
 ```bash
 # For Debian/Ubuntu:
 sudo apt-get install python3-venv
-
+```
 Then create and activate the virtual environment:
 
 ```bash
@@ -43,9 +53,8 @@ If you don't have `requirement.txt`, install the core packages manually:
 ```bash
 pip install pandas numpy seaborn matplotlib scikit-learn scipy requests
 ```
-```
 
-## 3. Quick Start — install and run
+## 4. Quick Start — install and run
 
 Minimal steps to install requirements and run a script from `/mnt/data/Flood_predictor`:
 
@@ -71,7 +80,7 @@ should_transfer_files = NO
 ```
 
 
-## 4. Verify locally
+## 5. Verify locally
 
 Activate the venv and run the pipeline scripts to verify they work:
 
@@ -88,7 +97,7 @@ python task_g_validation.py
 python task_h_visualize.py
 ```
 
-## 6. Submit the DAG
+## 7. Submit the DAG
 
 Validate and submit the DAG:
 
