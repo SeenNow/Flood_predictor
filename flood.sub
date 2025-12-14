@@ -1,18 +1,18 @@
 # flood.sub - Generic submit file
 # Executable is python3, arguments is the script name passed from DAG
-executable          = /usr/bin/python3
-arguments           = $(script_name)
+# flood.sub - NFS shared workspace version
 
-should_transfer_files = YES
-when_to_transfer_output = ON_EXIT
-transfer_input_files = config.py
+executable = /mnt/data/flood_predictor/venv/bin/python
+arguments = $(script_name)
+initialdir = /mnt/data/flood_predictor
+should_transfer_files = NO
 
-request_cpus        = 1
-request_memory      = 512MB
-request_disk        = 512MB
+request_cpus = 1
+request_memory = 512MB
+request_disk = 512MB
 
-log                 = logs/$(job_name).log
-output              = logs/$(job_name).out
-error               = logs/$(job_name).err
+log = $(job_name).log
+output = $(job_name).out
+error = $(job_name).err
 
-queue
+queue 
