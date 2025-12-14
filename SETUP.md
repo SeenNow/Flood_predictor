@@ -94,6 +94,9 @@ Activate the venv and run the pipeline scripts to verify they work:
 
 ```bash
 . venv/bin/activate
+```
+This part is optional
+```bash
 python task_a_ingestion.py
 python task_b_preprocessing.py
 python task_c_feature_engineering.py
@@ -105,7 +108,7 @@ python task_g_validation.py
 python task_h_visualize.py
 ```
 
-## 7. Submit the DAG
+## 6. Submit the DAG
 
 Validate and submit the DAG:
 
