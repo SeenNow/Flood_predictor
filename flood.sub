@@ -2,7 +2,7 @@
 # Executable is python3, arguments is the script name passed from DAG
 # flood.sub - NFS shared workspace version
 
-executable = /mnt/data/flood_predictor/venv/bin/python
+executable = /mnt/data/Flood_predictor/venv/bin/python
 arguments = $(script_name)
 initialdir = /mnt/data/flood_predictor
 should_transfer_files = NO
