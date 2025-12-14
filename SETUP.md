@@ -42,9 +42,17 @@ Then create and activate the virtual environment:
 
 ```bash
 cd /mnt/data/Flood_predictor
+```
+```bash
 python3 -m venv venv
-source venv/bin/activate        
+```
+```bash
+source venv/bin/activate
+```
+```bash
 pip install -U pip
+```
+```bash
 pip install -r requirement.txt
 ```
 
