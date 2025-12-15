@@ -98,7 +98,7 @@ def fetch_historical_data(start_year=2020):
                 all_data.append(row)
             
             # Respect API Rate Limits
-            time.sleep(1) 
+            time.sleep(10) 
             
         except Exception as e:
             print(f"   Exception fetching {town}: {e}")

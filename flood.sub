@@ -1,18 +1,23 @@
-# flood.sub - Generic submit file
-# Executable is python3, arguments is the script name passed from DAG
-# flood.sub - NFS shared workspace version
+# flood.sub - NFS Bypass Version
 
-executable = /mnt/data/Flood_predictor/venv/bin/python
+# 1. Use the wrapper script as the executable
+executable = run.sh
+
+# 2. Pass the python script name as an argument to the wrapper
 arguments = $(script_name)
-initialdir = /mnt/data/flood_predictor
-should_transfer_files = NO
 
+# 3. Enable transfer to bypass the FileSystemDomain check
+should_transfer_files = YES
+when_to_transfer_output = ON_EXIT
+
+# 4. Standard Resources
 request_cpus = 1
 request_memory = 512MB
 request_disk = 512MB
 
+# 5. Logs
 log = $(job_name).log
 output = $(job_name).out
 error = $(job_name).err
 
-queue 
+queue
