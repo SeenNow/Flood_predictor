@@ -10,20 +10,14 @@ HISTORICAL_API_URL = "https://archive-api.open-meteo.com/v1/archive"
 
 # Coordinates for Malaysian Towns (Lat, Lon)
 LOCATIONS = {
-    'Kota Bharu': {'lat': 6.1254, 'lon': 102.2381},
     'Johor Bahru': {'lat': 1.4927, 'lon': 103.7414},
     'Kuantan': {'lat': 3.8077, 'lon': 103.3260},
     'Kuala Lumpur': {'lat': 3.1390, 'lon': 101.6869},
-    'George Town': {'lat': 5.4117, 'lon': 100.3327},
     'Ipoh': {'lat': 4.5975, 'lon': 101.0901},
     'Shah Alam': {'lat': 3.0733, 'lon': 101.5185},
     'Malacca City': {'lat': 2.1896, 'lon': 102.2501},
-    'Alor Setar': {'lat': 6.1248, 'lon': 100.3678},
-    'Kuala Terengganu': {'lat': 5.3302, 'lon': 103.1408},
     'Petaling Jaya': {'lat': 3.1073, 'lon': 101.6067},
-    'Seremban': {'lat': 2.7258, 'lon': 101.9424},
-    'Kota Kinabalu': {'lat': 5.9804, 'lon': 116.0735},
-    'Kuching': {'lat': 1.5535, 'lon': 110.3593},
+
 }
 
 def fetch_historical_data(start_year=2020):
