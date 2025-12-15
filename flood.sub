@@ -7,7 +7,7 @@ executable = run.sh
 arguments = $(script_name)
 
 # 3. Enable transfer to bypass the FileSystemDomain check
-should_transfer_files = YES
+should_transfer_files = NO
 when_to_transfer_output = ON_EXIT
 
 # 4. Standard Resources
