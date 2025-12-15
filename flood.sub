@@ -1,23 +1,31 @@
-# flood.sub - NFS Bypass Version
+# This submit file runs jobs on HTCondor without relying on file transfer for large datasets
 
-# 1. Use the wrapper script as the executable
+# Executable script to run
 executable = run.sh
-
-# 2. Pass the python script name as an argument to the wrapper
+# Pass the script name as an argument to the executable
 arguments = $(script_name)
 
-# 3. Enable transfer to bypass the FileSystemDomain check
-should_transfer_files = NO
+# Enable HTCondor's file transfer mechanism
+should_transfer_files = YES
+# Transfer output files back when the job completes
 when_to_transfer_output = ON_EXIT
 
-# 4. Standard Resources
-request_cpus = 1
-request_memory = 512MB
-request_disk = 512MB
+# Don't transfer input files since we're using absolute NFS paths
+# This prevents HTCondor from attempting to transfer large data files
+transfer_input_files = ""
 
-# 5. Logs
-log = $(job_name).log
-output = $(job_name).out
-error = $(job_name).err
+# Resource requests
+request_cpus = 1          # Request 1 CPU core
+request_memory = 512MB    # Request 512MB of RAM
+request_disk = 512MB      # Request 512MB of disk space
 
+# Job logging and output files (variables set elsewhere)
+log = $(job_name).log     # Condor log file
+output = $(job_name).out  # Standard output file
+error = $(job_name).err   # Standard error file
+
+# Machine requirements: Linux on x86_64 architecture only
+requirements = (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX")
+
+# Submit the job to the queue
 queue

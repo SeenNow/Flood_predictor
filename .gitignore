@@ -10,3 +10,4 @@ flood_prediction_trends.png
 features.csv
 .gitignore
 model_water.pkl
+.venv/
