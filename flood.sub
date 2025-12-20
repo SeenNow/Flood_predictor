@@ -15,14 +15,14 @@ when_to_transfer_output = ON_EXIT
 transfer_input_files = ""
 
 # Resource requests
-request_cpus = 1          # Request 1 CPU core
-request_memory = 512MB    # Request 512MB of RAM
-request_disk = 512MB      # Request 512MB of disk space
+request_cpus = 1          
+request_memory = 512MB    
+request_disk = 512MB      
 
 # Job logging and output files (variables set elsewhere)
-log = $(job_name).log     # Condor log file
-output = $(job_name).out  # Standard output file
-error = $(job_name).err   # Standard error file
+log = $(job_name).log     
+output = $(job_name).out  
+error = $(job_name).err   
 
 # Machine requirements: Linux on x86_64 architecture only
 requirements = (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX")
