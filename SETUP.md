@@ -1,6 +1,4 @@
-Here is the updated `SETUP.md` file. I have removed the manual configuration step for `flood.sub` since the correct version will be included in the repository.
 
-````markdown
 # Flood Predictor — Step-by-Step Setup & Run Guide
 
 This guide details exactly how to configure and run the Flood Predictor workflow on a shared NFS cluster (HTCondor).
@@ -43,7 +41,6 @@ pip install -U pip
 pip install -r requirement.txt
 
 ```
-
 
 If you don't have `requirement.txt`, install the core packages manually:
 
